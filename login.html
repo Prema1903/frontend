@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<style>
+    /* General body styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: white;
+    }
+
+    /* Navbar styling */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: cadetblue;
+        /* Gradient background (blue tones) */
+        padding: 1rem 2rem;
+    }
+
+    .navbar .logo-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar .logo {
+        width: 40px;
+        /* Adjust the     size of the logo */
+        height: 40px;
+        margin-right: 10px;
+    }
+
+    .navbar .college-name {
+        font-size: 24px;
+        color: white;
+        font-weight: bold;
+    }
+
+    .navbar .nav-links {
+        list-style-type: none;
+        display: flex;
+    }
+
+    .navbar .nav-links li {
+        margin: 0 1rem;
+    }
+
+    .navbar .nav-links a {
+        text-decoration: none;
+        color: black;
+        font-size: 18px;
+        transition: color 0.3s ease;
+    }
+
+    .navbar .nav-links a:hover {
+        color: white;
+        /* Hover color change */
+    }
+
+    /* Hero section */
+    .hero {
+        padding: 4rem 2rem;
+        text-align: center;
+        background-color: #fff;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+        color: #333;
+    }
+
+    .hero p {
+        font-size: 18px;
+        color: #555;
+    }
+
+
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .navbar {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .nav-links {
+            flex-direction: column;
+            margin-top: 1rem;
+        }
+
+        .nav-links li {
+            margin: 0.5rem 0;
+        }
+
+
+    }
+
+    /* Login Form Container */
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        /* Make the login container vertically centered */
+    }
+
+    .login-box {
+        background-color: cadetblue;
+        padding: 40px;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 400px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .login-box h2 {
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .textbox {
+        margin-bottom: 20px;
+    }
+
+    .textbox input {
+        width: 100%;
+        padding: 15px;
+        font-size: 18px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        background-color: white;
+        outline: none;
+        transition: border 0.3s ease;
+    }
+
+    .textbox input:focus {
+        border-color: #9ee73e;
+        /* Blue border on focus */
+    }
+
+    .remember-me {
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .remember-me label {
+        font-size: 16px;
+        color: #333;
+    }
+
+    .remember-me input[type="checkbox"] {
+        transform: scale(1.2);
+        margin-right: 10px;
+    }
+
+    /* Button Styles */
+    .btn {
+        width: 100%;
+        padding: 15px;
+        background-color: black;
+        /* Blue background */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #005f8a;
+        /* Darker blue on hover */
+    }
+
+    /* Forgot Password Link */
+    .forgot-password {
+        margin-top: 20px;
+    }
+
+    .forgot-password a {
+        font-size: 14px;
+        color: cadetblue;
+        text-decoration: none;
+    }
+
+    .forgot-password a:hover {
+        text-decoration: underline;
+    }
+
+    /* Footer styles */
+    footer {
+        text-align: center;
+        background-color: #333;
+        color: white;
+        padding: 1rem 0;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .navbar .nav-links {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .navbar .nav-links li {
+            margin: 0.5rem 0;
+        }
+
+        .login-box {
+            padding: 30px;
+        }
+
+        .login-box h2 {
+            font-size: 24px;
+        }
+
+        .textbox input {
+            font-size: 16px;
+        }
+
+        .btn {
+            font-size: 16px;
+        }
+    }
+</style>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+
+                <h1>Classroom</h1> <!-- Replace with your logo if desired -->
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html" class="active">Login</a></li>
+                <li><a href="register.html" class="active">Register</a></li>
+                <li><a href="contact.html">contact</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Login Form Section -->
+    <section class="login-container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <form id="myForm">
+
+                <div class="textbox">
+                    <input type="text" placeholder="Email" id="email" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" placeholder="Password" id="pass" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <p class="forgot-password"><a href="{% url 'reg' %}">register</a></p>
+            </form>
+        </div>
+    </section>
+
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", (e) => {
+            e.preventDefault()
+            var email = document.getElementById("email").value
+            var pass = document.getElementById("pass").value
+            fetch(`http://localhost:8080/std/${email}`)
+                .then((res) => {
+                    return res.json()
+                })
+                .then((data) => {
+                    if (data.email == email && data.pass == pass) {
+                        alert("Successfully Login")
+                    }
+                    else{
+                        alert("Wrong Email or Password")
+                    }
+
+                })
+        })
+
+
+    </script>
+
+
+</body>
+
+</html>

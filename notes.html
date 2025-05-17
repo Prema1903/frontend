@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 100vh;
+
+        }
+
+        .box1 {
+            position: relative;
+            background-image: url(/images/addNotes.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .box1>h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            color: white;
+            font-size: 2.5rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            text-shadow: 4px 4px 4px black;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+
+        .box2 {
+            background-color: #5f9ea0;
+            color: white;
+        }
+
+        .box2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box2>form {
+            width: 350px;
+            background-color: black;
+            /* background-color: #2bc0dc; */
+        }
+
+        .box2>form>input,
+        .box2>form>label {
+            display: block;
+            font-size: 1.5rem;
+            margin: 20px;
+        }
+
+        .box2>form>input[type="submit"] {
+            background-color: #5f9ea0;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            width: 87%;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            transition: transform 0.3s;
+        }
+
+        .box2>form>input[type="submit"]:hover,
+        .box2 a:hover {
+            background-color: #ea3a7b;
+            cursor: pointer;
+            transform: scale(1.05);
+        }
+
+        .box2 a {
+            font-size: 1.4rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            display: block;
+            margin: 20px;
+            text-align: center;
+            background-color: #5f9ea0;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box1">
+            <h1>Add Notes</h1>
+        </div>
+        <div class="box2">
+            <form id="myForm">
+                <label>Subject Code</label>
+                <input type="text" placeholder="enter subCode" id="subCode">
+                <label>Subject Name</label>
+                <input type="text" placeholder="enter subName" id="subName">
+                <label>Subject Document</label>
+                <input type="file" placeholder="enter subDoc" id="subDoc">
+                <input type="submit" value="Add New Notes">
+                <a href="viewnotes.html">View Notes</a>
+            </form>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+
+</html>

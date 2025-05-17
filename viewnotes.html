@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+     }
+     h2{
+        text-align: center;
+        font-size: 2.5rem;
+        margin: 20px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+     }
+     body{
+        background-color: #f4f4f4;
+     }
+     .container{
+        background-color: white;
+        border-radius: 10px;
+        width: 80%;
+        height: 76vh;
+        margin: 30px auto;
+        overflow:auto;
+     }
+     .container > table {
+        margin: 10px auto;
+        border-radius: 10px;
+        width: 97%;
+        border:2px solid black;  
+        border-collapse: collapse;
+     }
+     .container > table > thead
+     {
+           text-transform: uppercase;
+     }
+     .container  td,  .container  th{
+        font-size: 1.2rem;
+        padding: 10px;
+        text-align: center;
+        border:2px solid black;
+        border-collapse: collapse;
+     }
+     
+    </style>
+</head>
+
+<body>
+    <h2>All Subject Notes List</h2>
+    <div class="container">
+           <table>
+               <thead>
+                <th>Subject Code</th>
+                <th>Subject Name</th>
+                <th>View PDF</th>
+               </thead>
+               <tbody id="tbody">
+
+               </tbody>
+           </table>
+    </div>
+
+    <script>
+        allData=""
+        fetch("http://localhost:8080/book")
+        .then((res)=>res.json())
+        .then((data)=>{
+
+            for(let dt of data)
+        {
+          allData+=`<tr>
+            <td>${dt.subCode}</td>
+            <td>${dt.subName}</td>
+            <td><a href="http://localhost:8080/book/${dt.subCode}">View</a></td>
+            </tr>`
+        }
+        document.getElementById("tbody")
+        .innerHTML=allData
+
+        })
+    </script>
+</body>
+</html>
